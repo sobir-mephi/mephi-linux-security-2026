@@ -1,0 +1,18 @@
+    1  sudo find / -type f -perm -4000
+    2  sudo find / -type f -perm -4000 -print
+    3  sudo find / -type f -perm -4000 -print  2>/dev/null
+    4  sudo find / -type f -perm -4000 -print  2>/dev/null > /media/mount/mephi/suid_files.txt
+    5  cat /media/mount/mephi/suid_files.txt
+    6  sudo find / -type f -perm -4000 2>/dev/null > /media/mount/mephi/suid_files.txt
+    7  cat /media/mount/mephi/suid_files.txt
+    8  sudo sh -c 'find / -type f -perm -4000 -print  2>/dev/null > /media/mount/mephi/suid_files.txt'
+    9  cat /media/mount/mephi/suid_files.txt
+   10  ps -eo pid,ruid,euid,ruser,euser,comm
+   11  ps -eo pid,ruid,euid,ruser,euser,comm | awk '($3 == 0 && $2 >= 1000)'
+   12  ps -eo pid,ruid,euid,ruser,euser,comm | awk 'NR==1 || ($3 == 0 && $2 >= 1000)'
+   13  sudo sh -c "ps -eo pid,ruid,euid,ruser,euser,comm | awk 'NR==1 || ($3 == 0 && $2 >= 1000)' > /media/mount/mephi/priv_processes.txt"
+   14  sudo sh -c "ps -eo pid,ruid,euid,ruser,euser,comm | awk 'NR==1 || (\$3 == 0 && \$2 >= 1000)' > /media/mount/mephi/priv_processes.txt"
+   15  cat /media/mount/mephi/priv_processes.txt
+   16  sudo sh -c "history > /media/mount/mephi/history2.out"
+   17  ls
+   18  history > hsitory2.out
