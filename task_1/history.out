@@ -1,0 +1,15 @@
+    1  clear
+    2  sudo groupadd students
+    3  sudo useradd -m -u 1234 -G students user1
+    4  sudo passwd user1
+    5  sudo chage -M 90 user1
+    6  stat /home/user1 > ~/stat.out
+    7  cat ~/stat.out 
+    8  sudo mount -t vboxsf mount /media/mount && cd /media/mount
+    9  sudo cp /etc/passwd /etc/shadow /etc/group /media/mount/mephi
+   10  ls mephi/
+   11  cp ~/stat.out /media/mount/mephi/
+   12  sudo cp ~/stat.out /media/mount/mephi/
+   13  history > /media/mount/mephi/history.out
+   14  sudo history > /media/mount/mephi/history.out
+   15  history > ~/history.out 
